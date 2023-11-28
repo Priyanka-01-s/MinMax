@@ -21,9 +21,13 @@ public class GenericMax<T extends Comparable<T>>{
         return maxi;
     }
 
+    public static <T> void printMax(T max) {
+        System.out.println("Maximum value: " + max);
+    }
+
     public void testMax(){
         T maxi = Compare(values);
-        System.out.println("THE MAXIMUM VALUE :"+ maxi);
+        printMax(maxi);
     }
 
 }
