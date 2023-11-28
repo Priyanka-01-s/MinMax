@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void checkLargest(Integer num1, Integer num2, Integer num3){
+    public static void checkLargest(Float num1, Float num2, Float num3){
         int res1 = num1.compareTo(num2);
         int res2 = num2.compareTo(num3);
         int res3 = num3.compareTo(num1);
@@ -21,9 +21,9 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         //use of interger onject
-        Integer num1 = sc.nextInt();
-        Integer num2 = sc.nextInt();
-        Integer num3 = sc.nextInt();
+        Float num1 = sc.nextFloat();
+        Float num2 = sc.nextFloat();
+        Float num3 = sc.nextFloat();
 
         checkLargest(num1, num2, num3);               
 
