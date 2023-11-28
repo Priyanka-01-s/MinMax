@@ -2,30 +2,30 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void checkLargest(Float num1, Float num2, Float num3){
-        int res1 = num1.compareTo(num2);
-        int res2 = num2.compareTo(num3);
-        int res3 = num3.compareTo(num1);
+    public static void checkLargest(String str1, String str2, String str3){
+        int res1 = str1.compareTo(str2);
+        int res2 = str2.compareTo(str3);
+        int res3 = str3.compareTo(str1);
 
         if (res1 > 0 && res2 > 0) {
-            System.out.println(num1 + " is greater than both " + num2 + " and " + num3);
+            System.out.println(str1 + " is greater than both " + str2 + " and " + str3);
         } else if (res2 > 0 && res3 > 0) {
-            System.out.println(num2 + " is greater than both " + num1 + " and " + num3);
+            System.out.println(str2 + " is greater than both " + str1 + " and " + str3);
         } else {
-            System.out.println(num3 + " is greater than both " + num1 + " and " + num2);
+            System.out.println(str3 + " is greater than both " + str1 + " and " + str2);
         }
     }
     public static void main(String[] args) {
         System.out.println("TEST MAXIMUM :\n");
-        System.out.println("Enter the 3 numbers for checking:");
+        System.out.println("Enter the 3 Strings for checking:");
         Scanner sc = new Scanner(System.in);
 
         //use of interger onject
-        Float num1 = sc.nextFloat();
-        Float num2 = sc.nextFloat();
-        Float num3 = sc.nextFloat();
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        String str3 = sc.nextLine();
 
-        checkLargest(num1, num2, num3);               
+        checkLargest(str1, str2, str3);               
 
         sc.close();
     }
