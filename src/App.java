@@ -2,30 +2,40 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void checkLargest(String str1, String str2, String str3){
-        int res1 = str1.compareTo(str2);
-        int res2 = str2.compareTo(str3);
-        int res3 = str3.compareTo(str1);
+    // Generic method that ensures T extends Comparable
+    public static <T extends Comparable<T>> T Compare(T obj1, T obj2, T obj3) {
+        int res1 = obj1.compareTo(obj2);
+        int res2 = obj2.compareTo(obj3);
+        int res3 = obj3.compareTo(obj1);
 
         if (res1 > 0 && res2 > 0) {
-            System.out.println(str1 + " is greater than both " + str2 + " and " + str3);
+            return obj1;
         } else if (res2 > 0 && res3 > 0) {
-            System.out.println(str2 + " is greater than both " + str1 + " and " + str3);
+            return obj2;
         } else {
-            System.out.println(str3 + " is greater than both " + str1 + " and " + str2);
+            return obj3;
         }
     }
+
     public static void main(String[] args) {
         System.out.println("TEST MAXIMUM :\n");
         System.out.println("Enter the 3 Strings for checking:");
         Scanner sc = new Scanner(System.in);
 
-        //use of interger onject
         String str1 = sc.nextLine();
         String str2 = sc.nextLine();
         String str3 = sc.nextLine();
 
-        checkLargest(str1, str2, str3);               
+        String maxString = Compare(str1, str2, str3);
+        System.out.println("\nMAXIMUM INTEGER: " + maxString);
+
+        System.out.println("\nEnter the 3 numbers for checking:");
+        Integer num1 = sc.nextInt();
+        Integer num2 = sc.nextInt();
+        Integer num3 = sc.nextInt();
+
+        Integer maxInt = Compare(num1,num2,num3);
+        System.out.println("\nMAXIMUM NUMBER : " +maxInt);
 
         sc.close();
     }
